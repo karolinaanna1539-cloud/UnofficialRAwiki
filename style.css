@@ -1,19 +1,19 @@
-body{
-    background:#111;
-    color:white;
-    font-family:Arial;
-    text-align:center;
 body {
     margin: 0;
     padding: 0;
 
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+
     background-image: url("images/background.png");
-    background-size: cover;        /* wypełnia cały ekran */
-    background-position: center;   /* wyśrodkowanie */
-    background-repeat: no-repeat;  /* bez powielania */
-    background-attachment: fixed;  /* tło nie przewija się */
-}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h1{
-    color:#6dc5ff;
+h1 {
+    color: #6dc5ff;
+}
