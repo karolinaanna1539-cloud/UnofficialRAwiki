@@ -19,6 +19,7 @@ body::before{
     inset: 0;
     background: rgba(0,0,0,0.4);
     pointer-events: none;
+    z-index: 0;
 }
 
 /* HEADER */
@@ -33,7 +34,10 @@ header{
     background:rgba(0,0,0,.4);
     backdrop-filter:blur(8px);
 }
-
+header, .hero, .content, nav {
+    position: relative;
+    z-index: 1;
+}
 /* LOGO */
 .logo{
 
