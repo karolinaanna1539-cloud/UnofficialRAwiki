@@ -45,15 +45,13 @@ header{
 }
 
 /* LOGO */
-logo{
-    font-size:32px;
-    font-weight:bold;
+.trailer-logo {
+  width: 120px;
+  max-width: 40%;
+  height: auto;
+  margin: 0 auto 15px auto;
+  display: block;
 }
-
-.logo span{
-    color:#4cbcff;
-}
-
 /* NAV */
 nav{
     display:flex;
