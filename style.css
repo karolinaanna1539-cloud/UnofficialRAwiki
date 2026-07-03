@@ -200,3 +200,34 @@ nav a:hover{
     margin-top:20px;
 
 }
+.quest-container{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+}
+
+.quest-card{
+
+    background:rgba(255,255,255,.1);
+
+    border-radius:15px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    transition:.3s;
+
+}
+
+.quest-card:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.18);
+
+}
