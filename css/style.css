@@ -163,3 +163,11 @@ img, iframe {
 html {
     scroll-behavior: smooth;
 }
+/* START SECTION TEXT */
+.start-text {
+    text-align: center;
+    color: #ddd;
+    font-size: 16px;
+    margin-bottom: 10px;
+    opacity: 0.85;
+}
