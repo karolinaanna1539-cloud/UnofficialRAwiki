@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
 }
 
-/* CIEMNA WARSTWA NA TLE */
+/* CIEMNA WARSTWA */
 body::before {
     content: "";
     position: fixed;
@@ -24,7 +24,7 @@ body::before {
     z-index: 0;
 }
 
-/* GLOBAL OVERLAY FIX */
+/* WSZYSTKO NAD OVERLAY */
 header,
 .hero,
 .content,
@@ -65,7 +65,7 @@ nav a:hover {
 }
 
 /* =========================
-   BANNER (NA GÓRZE)
+   BANNER (TOP IMAGE)
 ========================= */
 
 .banner {
@@ -104,20 +104,57 @@ nav a:hover {
 }
 
 /* =========================
-   HERO SECTION
+   HERO (WELCOME SECTION)
 ========================= */
 
 .hero {
     text-align: center;
     padding: 80px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
+/* UKRYWAMY H1 (bo używasz obrazka) */
 .hero h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
+    display: none;
 }
 
+/* HERO TITLE IMAGE */
+.hero-title {
+    max-width: 650px;
+    width: 90%;
+    margin: 0 auto 20px auto;
+    display: block;
+
+    filter: drop-shadow(0 0 15px rgba(76,188,255,0.7));
+    transition: 0.3s ease;
+
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+.hero-title:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(76,188,255,1));
+}
+
+/* glow animation */
+@keyframes glowPulse {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(76,188,255,0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(76,188,255,1));
+    }
+    100% {
+        filter: drop-shadow(0 0 10px rgba(76,188,255,0.5));
+    }
+}
+
+/* HERO TEXT */
 .hero p {
     font-size: 22px;
     margin-bottom: 30px;
@@ -216,17 +253,6 @@ nav a:hover {
     border-radius: 15px;
     position: sticky;
     top: 20px;
-    height: fit-content;
-}
-
-.infobox table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.infobox td {
-    padding: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 /* =========================
@@ -253,7 +279,7 @@ nav a:hover {
 }
 
 /* =========================
-   GENERAL FIXES
+   GLOBAL FIXES
 ========================= */
 
 img, iframe {
