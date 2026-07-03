@@ -159,3 +159,6 @@ img, iframe {
 html {
     scroll-behavior: smooth;
 }
+section {
+    margin: 0;
+}
