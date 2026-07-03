@@ -349,3 +349,30 @@ font-weight:bold;
 background:#2195ea;
 
 }
+nav{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+
+    font-weight:bold;
+
+}
+
+nav a:hover{
+
+    color:#4cbcff;
+
+}
