@@ -231,3 +231,115 @@ nav a:hover{
     background:rgba(255,255,255,.18);
 
 }
+.wiki-container{
+
+width:90%;
+
+max-width:1400px;
+
+margin:50px auto;
+
+display:grid;
+
+grid-template-columns:3fr 1fr;
+
+gap:40px;
+
+}
+
+.content{
+
+background:rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:15px;
+
+}
+
+.content section{
+
+margin-top:40px;
+
+}
+
+.content h2{
+
+margin-bottom:15px;
+
+border-bottom:2px solid #4eb9ff;
+
+padding-bottom:10px;
+
+}
+
+.content p,
+.content li{
+
+line-height:1.8;
+
+}
+
+.infobox{
+
+background:rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:15px;
+
+height:fit-content;
+
+position:sticky;
+
+top:20px;
+
+}
+
+.infobox table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.infobox td{
+
+padding:10px;
+
+border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.language{
+
+margin:20px 0;
+
+}
+
+.language button{
+
+padding:10px 20px;
+
+margin-right:10px;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+background:#3caeff;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.language button:hover{
+
+background:#2195ea;
+
+}
