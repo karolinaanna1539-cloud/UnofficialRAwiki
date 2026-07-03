@@ -30,23 +30,15 @@ body::before {
     z-index: 0;
 }
 
-/* everything above overlay */
-header,
-section {
+/* =========================
+   HEADER
+========================= */
+header {
     position: relative;
     z-index: 1;
-}
-
-/* =========================
-   TOPBAR
-========================= */
-.topbar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     padding: 15px 30px;
@@ -54,44 +46,42 @@ section {
     backdrop-filter: blur(10px);
 }
 
-.topbar .logo {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.topbar nav {
+nav {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.topbar nav a {
+nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.topbar nav a:hover {
+nav a:hover {
     color: #4cbcff;
 }
 
 /* =========================
-   HERO
+   HERO (CLEAN START SCREEN)
 ========================= */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+
+    height: 70vh;
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
-    gap: 10px;
+    gap: 20px;
+    text-align: center;
 }
 
-/* TITLE IMAGE */
+/* TITLE */
 .hero-title {
     max-width: 600px;
     width: 90%;
@@ -105,73 +95,30 @@ section {
     filter: drop-shadow(0 0 25px rgba(76,188,255,1));
 }
 
-/* SUBTITLE */
-.hero-subtitle {
-    font-size: 20px;
-    color: rgba(255,255,255,0.85);
-    max-width: 700px;
-    text-align: center;
-}
-
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 .button {
     background: linear-gradient(135deg, #4cbcff, #219fe6);
     color: white;
 
-    padding: 12px 32px;
+    padding: 14px 36px;
     border-radius: 12px;
 
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 
     transition: 0.3s;
 
-    box-shadow: 0 5px 15px rgba(76,188,255,0.25);
-    display: inline-block;
+    box-shadow: 0 5px 20px rgba(76,188,255,0.3);
 }
 
 .button:hover {
-    transform: scale(1.06);
-    box-shadow: 0 8px 25px rgba(76,188,255,0.5);
+    transform: scale(1.07);
+    box-shadow: 0 10px 30px rgba(76,188,255,0.6);
 }
 
 /* =========================
-   QUICK LINKS (CARDS)
-========================= */
-.quick-links {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
-}
-
-.card {
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    border-radius: 12px;
-
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-
-    transition: 0.3s;
-    backdrop-filter: blur(6px);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.15);
-}
-
-/* =========================
-   VIDEO SECTION
+   VIDEO
 ========================= */
 .video-section {
     text-align: center;
@@ -190,37 +137,16 @@ section {
     aspect-ratio: 16/9;
 
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-
     display: block;
     margin: 0 auto;
 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     transition: 0.3s;
 }
 
 .video-section iframe:hover {
     transform: scale(1.02);
     box-shadow: 0 15px 35px rgba(76,188,255,0.3);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 800px) {
-    .quick-links {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .topbar {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 500px) {
-    .quick-links {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* =========================
