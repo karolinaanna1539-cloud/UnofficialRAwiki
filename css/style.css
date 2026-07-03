@@ -1,11 +1,15 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY + TŁO */
+/* =========================
+   BODY BACKGROUND
+========================= */
 body {
     background-image: url("../images/background.png");
     background-size: cover;
@@ -14,7 +18,7 @@ body {
     background-attachment: fixed;
 }
 
-/* CIEMNA WARSTWA */
+/* ciemna warstwa */
 body::before {
     content: "";
     position: fixed;
@@ -24,7 +28,7 @@ body::before {
     z-index: 0;
 }
 
-/* WSZYSTKO NAD OVERLAY */
+/* wszystko nad overlay */
 header,
 .hero,
 .content,
@@ -37,10 +41,9 @@ nav,
 /* =========================
    HEADER + NAV
 ========================= */
-
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 20px 50px;
     background: rgba(0,0,0,0.4);
@@ -65,75 +68,30 @@ nav a:hover {
 }
 
 /* =========================
-   BANNER (TOP IMAGE)
+   HERO SECTION
 ========================= */
-
-.banner {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.banner img {
-    width: 100%;
-    max-height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.banner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.1),
-        rgba(0,0,0,0.6)
-    );
-}
-
-.banner-text {
-    position: absolute;
-    bottom: 20px;
-    left: 30px;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-    z-index: 2;
-}
-
-/* =========================
-   HERO (WELCOME SECTION)
-========================= */
-
 .hero {
     text-align: center;
     padding: 80px 20px;
 
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
-}
-
-/* UKRYWAMY H1 (bo używasz obrazka) */
-.hero h1 {
-    display: none;
 }
 
 /* HERO TITLE IMAGE */
 .hero-title {
     max-width: 650px;
     width: 90%;
-    margin: 0 auto 20px auto;
+    margin-bottom: 20px;
     display: block;
 
     filter: drop-shadow(0 0 15px rgba(76,188,255,0.7));
     transition: 0.3s ease;
-
-    animation: glowPulse 3s infinite ease-in-out;
 }
 
 .hero-title:hover {
@@ -141,23 +99,11 @@ nav a:hover {
     filter: drop-shadow(0 0 25px rgba(76,188,255,1));
 }
 
-/* glow animation */
-@keyframes glowPulse {
-    0% {
-        filter: drop-shadow(0 0 10px rgba(76,188,255,0.5));
-    }
-    50% {
-        filter: drop-shadow(0 0 25px rgba(76,188,255,1));
-    }
-    100% {
-        filter: drop-shadow(0 0 10px rgba(76,188,255,0.5));
-    }
-}
-
-/* HERO TEXT */
+/* TEXT */
 .hero p {
     font-size: 22px;
     margin-bottom: 30px;
+    color: white;
 }
 
 /* BUTTON */
@@ -180,7 +126,6 @@ nav a:hover {
 /* =========================
    VIDEO SECTION
 ========================= */
-
 .video-section {
     text-align: center;
     padding: 40px 0;
@@ -212,9 +157,8 @@ nav a:hover {
 }
 
 /* =========================
-   WIKI LAYOUT
+   WIKI LAYOUT (future pages)
 ========================= */
-
 .wiki-container {
     width: 90%;
     max-width: 1400px;
@@ -224,7 +168,6 @@ nav a:hover {
     gap: 40px;
 }
 
-/* CONTENT */
 .content {
     background: rgba(255,255,255,0.08);
     padding: 40px;
@@ -244,6 +187,7 @@ nav a:hover {
 .content p,
 .content li {
     line-height: 1.7;
+    color: white;
 }
 
 /* INFOBOX */
@@ -256,9 +200,8 @@ nav a:hover {
 }
 
 /* =========================
-   QUESTS
+   QUEST CARDS
 ========================= */
-
 .quest-container {
     width: 90%;
     max-width: 1100px;
@@ -281,7 +224,6 @@ nav a:hover {
 /* =========================
    GLOBAL FIXES
 ========================= */
-
 img, iframe {
     display: block;
 }
