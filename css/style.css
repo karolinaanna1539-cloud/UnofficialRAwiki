@@ -204,3 +204,8 @@ nav a:hover{
     align-items: center;
     margin: 60px auto;
 }
+.video-section iframe{
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
