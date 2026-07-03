@@ -33,13 +33,19 @@ header{
 
     backdrop-filter:blur(8px);
 
-}
-
-
 .logo{
 
-    font-size:30px;
+    font-size:32px;
+
     font-weight:bold;
+
+    color:white;
+
+}
+
+.logo span{
+
+    color:#4cbcff;
 
 }
 
