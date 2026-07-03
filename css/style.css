@@ -210,13 +210,16 @@ nav a:hover{
 }
 
 /* YOUTUBE IFRAME */
-.video-section iframe{
-    width:100%;
-    max-width:800px;
-    aspect-ratio:16/9;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.5);
-    transition:0.3s;
+.video-section iframe {
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
+
+    display: block;
+    margin: 0 auto;
 }
 
 .video-section iframe:hover{
