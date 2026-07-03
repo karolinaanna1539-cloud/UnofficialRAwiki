@@ -16,6 +16,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -30,18 +31,23 @@ body::before {
     z-index: 0;
 }
 
+/* wszystko nad overlay */
+header,
+.hero,
+.video-section {
+    position: relative;
+    z-index: 1;
+}
+
 /* =========================
    HEADER
 ========================= */
 header {
-    position: relative;
-    z-index: 1;
-
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    padding: 15px 30px;
+    padding: 12px 25px;
     background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
 }
@@ -64,21 +70,18 @@ nav a:hover {
 }
 
 /* =========================
-   HERO (CLEAN START SCREEN)
+   HERO (NO EXTRA SPACE FIX)
 ========================= */
 .hero {
-    position: relative;
-    z-index: 1;
-
-    height: 70vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    gap: 20px;
     text-align: center;
+
+    padding: 20px 20px 10px 20px;
+    gap: 10px;
 }
 
 /* TITLE */
@@ -118,19 +121,20 @@ nav a:hover {
 }
 
 /* =========================
-   VIDEO
+   VIDEO SECTION
 ========================= */
 .video-section {
     text-align: center;
-    padding: 30px 0;
+    padding: 10px 0 20px 0;
 }
 
 .trailer-logo {
     width: 100px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 8px auto;
     display: block;
 }
 
+/* YOUTUBE */
 .video-section iframe {
     width: 100%;
     max-width: 800px;
@@ -150,7 +154,7 @@ nav a:hover {
 }
 
 /* =========================
-   GLOBAL FIX
+   GLOBAL FIXES
 ========================= */
 img, iframe {
     display: block;
@@ -158,28 +162,4 @@ img, iframe {
 
 html {
     scroll-behavior: smooth;
-}
-section {
-    margin: 0;
-}
-/* =========================
-   HOME PAGE SPACING FIX
-========================= */
-
-.home .hero {
-    min-height: auto;
-    padding: 30px 20px 10px 20px;
-    gap: 8px;
-}
-
-.home .hero-title {
-    margin-bottom: 5px;
-}
-
-.home .video-section {
-    padding: 10px 0 20px 0;
-}
-
-.home .button {
-    margin-top: 5px;
 }
