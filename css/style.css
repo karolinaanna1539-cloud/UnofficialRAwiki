@@ -189,12 +189,13 @@ nav a:hover{
 .video-section {
   text-align: center;
   padding: 40px 0;
-}
-
+ }
 .trailer-logo {
-  width: 140px;
+  width: 120px;
+  max-width: 40%;
   height: auto;
-  margin-bottom: 20px;
+  margin: 0 auto 15px auto;
+  display: block;
 }
 
 /* TITLE IMAGE (TRAILER PNG) */
