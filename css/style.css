@@ -198,3 +198,13 @@ nav a:hover{
     transform:translateY(-5px);
     background:rgba(255,255,255,.15);
 }
+.video-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 60px auto;
+}
+.video-section h2{
+    color: white;
+    margin-bottom: 20px;
+}
