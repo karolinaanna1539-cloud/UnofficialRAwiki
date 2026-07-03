@@ -8,7 +8,7 @@
 }
 
 /* =========================
-   BODY BACKGROUND
+   BACKGROUND
 ========================= */
 body {
     background-image: url("../images/background.png");
@@ -18,7 +18,7 @@ body {
     background-attachment: fixed;
 }
 
-/* ciemna warstwa */
+/* dark overlay */
 body::before {
     content: "";
     position: fixed;
@@ -68,7 +68,7 @@ nav a:hover {
 }
 
 /* =========================
-   HERO SECTION
+   HERO (GAME STYLE)
 ========================= */
 .hero {
     text-align: center;
@@ -80,6 +80,8 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
+    gap: 10px;
+
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
@@ -87,7 +89,7 @@ nav a:hover {
 .hero-title {
     max-width: 650px;
     width: 90%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: block;
 
     filter: drop-shadow(0 0 15px rgba(76,188,255,0.7));
@@ -99,28 +101,38 @@ nav a:hover {
     filter: drop-shadow(0 0 25px rgba(76,188,255,1));
 }
 
-/* TEXT */
-.hero p {
+/* SUBTITLE */
+.hero-subtitle {
     font-size: 22px;
-    margin-bottom: 30px;
-    color: white;
+    color: rgba(255,255,255,0.85);
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
-/* BUTTON */
+/* =========================
+   BUTTON (START HERE)
+========================= */
 .button {
-    background: #4cbcff;
+    background: linear-gradient(135deg, #4cbcff, #219fe6);
     color: white;
-    padding: 15px 35px;
-    border-radius: 10px;
+
+    padding: 15px 40px;
+    border-radius: 12px;
+
     text-decoration: none;
     font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
     transition: 0.3s;
+
+    box-shadow: 0 5px 20px rgba(76,188,255,0.3);
     display: inline-block;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    background: #219fe6;
+    transform: scale(1.07);
+    box-shadow: 0 8px 30px rgba(76,188,255,0.6);
 }
 
 /* =========================
@@ -143,6 +155,7 @@ nav a:hover {
     width: 100%;
     max-width: 800px;
     aspect-ratio: 16/9;
+
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: 0.3s;
