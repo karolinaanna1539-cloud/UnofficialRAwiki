@@ -1,255 +1,225 @@
 /* =========================
    RESET
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 /* =========================
    GLOBAL FIXES
 ========================= */
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    overflow-x: hidden;
-
-    background-image: url("../images/background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    color: white;
-    font-family: Arial, sans-serif;
+body{
+    overflow-x:hidden;
+    background-image:url("../images/background.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    color:white;
+    font-family:Arial,sans-serif;
 }
 
 /* dark overlay */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    pointer-events: none;
-    z-index: 0;
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    pointer-events:none;
+    z-index:0;
 }
 
 /* wszystko nad overlay */
 header,
 .hero,
-.video-section {
-    position: relative;
-    z-index: 1;
+.video-section{
+    position:relative;
+    z-index:1;
 }
 
 /* =========================
    HEADER
 ========================= */
-header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    padding: 12px 25px;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(10px);
+header{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding:12px 25px;
+    background:rgba(0,0,0,.6);
+    backdrop-filter:blur(10px);
 }
 
-nav {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+nav{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s;
+nav a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
 }
 
-nav a:hover {
-    color: #4cbcff;
+nav a:hover{
+    color:#4cbcff;
 }
 
 /* =========================
-   HERO (STABLE FULL SCREEN)
+   HERO
 ========================= */
-.hero {
-    min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    gap: 12px;
-
-    padding: 20px;
-
-    animation: fadeIn 0.8s ease-in-out;
+.hero{
+    min-height:100vh;
+    max-height:100vh;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+    padding:20px;
+    animation:fadeIn .8s ease-in-out;
 }
 
 /* =========================
    LOGO
 ========================= */
-.hero-title {
-    width: clamp(320px, 60vw, 750px);
-
-    filter: drop-shadow(0 0 18px rgba(76,188,255,0.8));
-    transition: 0.3s;
-
-    transform: none;
+.hero-title{
+    width:clamp(320px,60vw,750px);
+    filter:drop-shadow(0 0 18px rgba(76,188,255,.8));
+    transition:.3s;
 }
 
-.hero-title:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 25px rgba(76,188,255,1));
+.hero-title:hover{
+    transform:scale(1.05);
+    filter:drop-shadow(0 0 25px rgba(76,188,255,1));
 }
 
 /* =========================
    START TEXT
 ========================= */
-.start-text {
-    text-align: center;
-    color: #e6e6e6;
-    font-size: 16px;
-    opacity: 0.95;
-
-    text-shadow: 0 0 12px rgba(76,188,255,0.35);
+.start-text{
+    text-align:center;
+    color:#e6e6e6;
+    font-size:16px;
+    opacity:.95;
+    text-shadow:0 0 12px rgba(76,188,255,.35);
 }
 
 /* =========================
    BUTTON
 ========================= */
-.button {
-    background: linear-gradient(135deg, #4cbcff, #219fe6);
-    color: white;
-
-    padding: 14px 36px;
-    border-radius: 12px;
-
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-
-    transition: 0.3s;
-
-    box-shadow: 0 5px 20px rgba(76,188,255,0.3);
+.button{
+    background:linear-gradient(135deg,#4cbcff,#219fe6);
+    color:white;
+    padding:14px 36px;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 5px 20px rgba(76,188,255,.3);
 }
 
-.button:hover {
-    transform: scale(1.07);
-    box-shadow: 0 10px 30px rgba(76,188,255,0.6);
+.button:hover{
+    transform:scale(1.07);
+    box-shadow:0 10px 30px rgba(76,188,255,.6);
 }
 
 /* =========================
    VIDEO SECTION
 ========================= */
-.video-section {
-    text-align: center;
-    padding: 10px 0 20px 0;
+.video-section{
+    text-align:center;
+    padding:10px 0 20px;
 }
 
-.trailer-logo {
-    width: 100px;
-    margin: 0 auto 8px auto;
-    display: block;
+.trailer-logo{
+    width:100px;
+    margin:0 auto 8px;
+    display:block;
 }
 
-.video-section iframe {
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16/9;
-
-    border-radius: 12px;
-    display: block;
-    margin: 0 auto;
-
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transition: 0.3s;
+.video-section iframe{
+    width:100%;
+    max-width:800px;
+    aspect-ratio:16/9;
+    display:block;
+    margin:0 auto;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
+    transition:.3s;
 }
 
-.video-section iframe:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(76,188,255,0.3);
+.video-section iframe:hover{
+    transform:scale(1.02);
+    box-shadow:0 15px 35px rgba(76,188,255,.3);
 }
 
 /* =========================
    DISCORD FLOAT BUTTON
 ========================= */
-.discord-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-
-    width: 52px;
-    height: 52px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background: rgba(0,0,0,0.4);
-    backdrop-filter: blur(8px);
-
-    box-shadow: 0 0 15px rgba(88,101,242,0.4);
-
-    z-index: 9999;
-
-    animation: discordFloat 2.5s ease-in-out infinite;
-    transition: 0.3s;
-
-    will-change: transform;
+.discord-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:52px;
+    height:52px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(0,0,0,.4);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 15px rgba(88,101,242,.4);
+    z-index:9999;
+    animation:discordFloat 2.5s ease-in-out infinite;
+    transition:.3s;
+    will-change:transform;
 }
 
-.discord-float img {
-    width: 28px;
-    height: 28px;
+.discord-float img{
+    width:28px;
+    height:28px;
 }
 
-.discord-float:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 30px rgba(88,101,242,0.8);
+.discord-float:hover{
+    transform:scale(1.15);
+    box-shadow:0 0 30px rgba(88,101,242,.8);
 }
 
 /* =========================
    ANIMATIONS
 ========================= */
-@keyframes discordFloat {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-6px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+@keyframes discordFloat{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+    100%{transform:translateY(0);}
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(10px);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
 /* =========================
    GLOBAL MEDIA FIX
 ========================= */
-img, iframe {
-    display: block;
+img,
+iframe{
+    display:block;
 }
