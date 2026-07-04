@@ -44,7 +44,7 @@ body::before{
     z-index:0;
 }
 
-/* wszystko nad overlay */
+/* CONTENT ABOVE OVERLAY */
 header,
 .hero,
 .guide-wrapper{
@@ -57,6 +57,7 @@ header,
 ========================= */
 header{
     height:60px;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -72,7 +73,6 @@ nav{
     justify-content:center;
 }
 
-/* HOME BUTTON */
 nav a{
     color:white;
     text-decoration:none;
@@ -126,7 +126,6 @@ nav a:hover{
     text-shadow:0 0 10px rgba(76,188,255,.4);
 }
 
-/* BUTTON CTA */
 .button{
     display:inline-block;
     padding:14px 36px;
@@ -141,7 +140,6 @@ nav a:hover{
     background:linear-gradient(135deg,#4cbcff,#219fe6);
 
     transition:.25s;
-
     box-shadow:0 0 18px rgba(76,188,255,.35);
 }
 
@@ -174,7 +172,6 @@ nav a:hover{
     border-radius:14px;
 
     box-shadow:0 10px 25px rgba(0,0,0,.5);
-
     transition:.3s;
 }
 
@@ -184,7 +181,7 @@ nav a:hover{
 }
 
 /* =========================
-   GUIDE PAGE LAYOUT
+   GUIDE LAYOUT
 ========================= */
 .guide-wrapper{
     display:flex;
