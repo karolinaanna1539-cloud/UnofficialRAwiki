@@ -40,7 +40,9 @@ body::before{
     z-index:0;
 }
 
-/* Wszystko nad tłem */
+/* =========================
+   LAYERS ABOVE BACKGROUND
+========================= */
 header,
 .hero,
 .guide-wrapper,
@@ -172,7 +174,6 @@ nav a:hover{
 
 .video-section iframe{
     width:min(780px,90vw);
-
     aspect-ratio:16/9;
 
     border:none;
@@ -189,7 +190,7 @@ nav a:hover{
 }
 
 /* =========================
-   GUIDE
+   GUIDE LAYOUT
 ========================= */
 .guide-wrapper{
     display:flex;
@@ -199,49 +200,6 @@ nav a:hover{
 
     margin:40px auto;
     padding:0 20px;
-}
-
-/* =========================
-   SIDEBAR
-========================= */
-.sidebar{
-    width:240px;
-
-    background:rgba(0,0,0,.55);
-    backdrop-filter:blur(10px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:14px;
-
-    padding:20px;
-
-    height:fit-content;
-
-    position:sticky;
-    top:80px;
-}
-
-.sidebar h3{
-    color:#4cbcff;
-    margin-bottom:15px;
-    font-size:18px;
-}
-
-.sidebar a{
-    display:block;
-
-    color:#ddd;
-    text-decoration:none;
-
-    padding:8px 5px;
-
-    transition:.2s;
-}
-
-.sidebar a:hover{
-    color:#4cbcff;
-    transform:translateX(6px);
 }
 
 /* =========================
@@ -293,7 +251,7 @@ section{
 }
 
 /* =========================
-   CARD
+   CARD SYSTEM
 ========================= */
 .card{
     background:rgba(0,0,0,.55);
@@ -342,17 +300,124 @@ footer{
    ANIMATION
 ========================= */
 @keyframes fadeIn{
-
     from{
         opacity:0;
         transform:translateY(15px);
     }
-
     to{
         opacity:1;
         transform:translateY(0);
     }
+}
 
+/* =========================================================
+   PRO WIKI SYSTEM (SIDEBAR + MENU)
+========================================================= */
+
+/* HAMBURGER */
+.menu-toggle{
+    position:fixed;
+    top:15px;
+    left:15px;
+
+    font-size:26px;
+    color:white;
+
+    background:rgba(0,0,0,.6);
+    padding:8px 12px;
+    border-radius:8px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    backdrop-filter:blur(8px);
+}
+
+/* SIDEBAR (OFF CANVAS) */
+.sidebar{
+    width:260px;
+    height:100vh;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(12px);
+
+    padding:20px;
+
+    transform:translateX(-100%);
+    transition:.3s ease;
+
+    z-index:9998;
+
+    overflow-y:auto;
+}
+
+.sidebar.active{
+    transform:translateX(0);
+}
+
+/* SEARCH */
+#search{
+    width:100%;
+    padding:10px;
+    margin:10px 0 15px;
+
+    border-radius:8px;
+    border:none;
+    outline:none;
+
+    background:rgba(255,255,255,.1);
+    color:white;
+}
+
+/* GROUPS */
+.group button{
+    width:100%;
+    text-align:left;
+
+    background:none;
+    border:none;
+
+    color:#fff;
+    font-weight:bold;
+
+    padding:10px 0;
+
+    cursor:pointer;
+}
+
+.group-items{
+    display:none;
+    padding-left:10px;
+}
+
+.group-items.open{
+    display:block;
+}
+
+/* LINKS */
+.nav-link{
+    display:block;
+    padding:6px 0;
+
+    color:#ddd;
+    text-decoration:none;
+
+    transition:.2s;
+}
+
+.nav-link:hover{
+    color:#4cbcff;
+    transform:translateX(5px);
+}
+
+.nav-link.active{
+    color:#4cbcff;
+    font-weight:bold;
 }
 
 /* =========================
@@ -397,8 +462,5 @@ footer{
 
     .sidebar{
         width:100%;
-        position:relative;
-        top:0;
     }
-
 }
