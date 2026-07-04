@@ -25,7 +25,7 @@ body{
     font-family:Arial,sans-serif;
 }
 
-/* dark overlay */
+/* Dark overlay */
 body::before{
     content:"";
     position:fixed;
@@ -35,7 +35,7 @@ body::before{
     z-index:0;
 }
 
-/* wszystko nad overlay */
+/* Wszystko nad overlay */
 header,
 .hero,
 .video-section{
@@ -118,6 +118,7 @@ nav a:hover{
    BUTTON
 ========================= */
 .button{
+    display:inline-block;
     background:linear-gradient(135deg,#4cbcff,#219fe6);
     color:white;
     padding:14px 36px;
@@ -165,46 +166,8 @@ nav a:hover{
 }
 
 /* =========================
-   DISCORD FLOAT BUTTON
-========================= */
-.discord-float{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:52px;
-    height:52px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:50%;
-    background:rgba(0,0,0,.4);
-    backdrop-filter:blur(8px);
-    box-shadow:0 0 15px rgba(88,101,242,.4);
-    z-index:9999;
-    animation:discordFloat 2.5s ease-in-out infinite;
-    transition:.3s;
-    will-change:transform;
-}
-
-.discord-float img{
-    width:28px;
-    height:28px;
-}
-
-.discord-float:hover{
-    transform:scale(1.15);
-    box-shadow:0 0 30px rgba(88,101,242,.8);
-}
-
-/* =========================
    ANIMATIONS
 ========================= */
-@keyframes discordFloat{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-6px);}
-    100%{transform:translateY(0);}
-}
-
 @keyframes fadeIn{
     from{
         opacity:0;
