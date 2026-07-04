@@ -12,8 +12,24 @@
 
 <body>
 
-<!-- ================= SIDEBAR (ALWAYS VISIBLE) ================= -->
-<aside class="sidebar static">
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+
+    <div class="logo">RA Wiki</div>
+
+    <nav class="topmenu">
+        <a href="index.html">Home</a>
+        <a href="getting-started.html">Getting Started</a>
+        <a href="#">Guides</a>
+        <a href="#">About</a>
+    </nav>
+
+    <div class="created">Created by RA Team</div>
+
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
 
     <h3>Getting Started</h3>
 
@@ -30,8 +46,8 @@
 
 </aside>
 
-<!-- ================= MAIN CONTENT ================= -->
-<main class="content static-content">
+<!-- ================= CONTENT ================= -->
+<main class="content">
 
     <h1>Getting Started</h1>
 
@@ -89,36 +105,29 @@
 
 </main>
 
-<!-- ================= FULLSCREEN OVERLAY ================= -->
+<!-- ================= OVERLAY ================= -->
 <div class="overlay" id="overlay" onclick="closeSection()"></div>
 
 <div class="fullscreen" id="fullscreen">
-
     <button class="close-btn" onclick="closeSection()">✕</button>
-
     <div id="fullscreen-content"></div>
-
 </div>
 
 <!-- ================= JS ================= -->
 <script>
 
 function openSection(id){
-
     const section = document.getElementById(id);
 
     document.getElementById("fullscreen-content").innerHTML = section.innerHTML;
 
     document.getElementById("fullscreen").classList.add("active");
     document.getElementById("overlay").classList.add("active");
-
 }
 
 function closeSection(){
-
     document.getElementById("fullscreen").classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
-
 }
 
 </script>
