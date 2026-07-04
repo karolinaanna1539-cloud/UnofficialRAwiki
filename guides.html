@@ -12,130 +12,114 @@
 
 <body>
 
-<!-- ================= HAMBURGER ================= -->
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<!-- ================= SIDEBAR (ALWAYS VISIBLE) ================= -->
+<aside class="sidebar static">
 
-<!-- ================= SIDEBAR ================= -->
-<aside class="sidebar" id="sidebar">
+    <h3>Getting Started</h3>
 
-    <h3>RA Wiki</h3>
-
-    <!-- SEARCH -->
-    <input type="text" id="search" placeholder="Search..." onkeyup="filterMenu()">
-
-    <!-- HOME -->
-    <a href="index.html" class="nav-link">Home</a>
-
-    <!-- GUIDES -->
-    <div class="group">
-        <button onclick="toggleGroup(this)">▶ Guides</button>
-        <div class="group-items">
-            <a href="#sec1" class="nav-link">Introduction</a>
-            <a href="#sec2" class="nav-link">Basic Rules</a>
-            <a href="#sec3" class="nav-link">First Steps</a>
-            <a href="#sec4" class="nav-link">Controls</a>
-        </div>
-    </div>
-
-    <!-- QUESTS -->
-    <div class="group">
-        <button onclick="toggleGroup(this)">▶ Quests</button>
-        <div class="group-items">
-            <a href="#sec6" class="nav-link">Quest System</a>
-            <a href="#sec7" class="nav-link">Rewards</a>
-        </div>
-    </div>
-
-    <!-- OTHER -->
-    <div class="group">
-        <button onclick="toggleGroup(this)">▶ Progression</button>
-        <div class="group-items">
-            <a href="#sec5" class="nav-link">Leveling</a>
-            <a href="#sec8" class="nav-link">Tips</a>
-            <a href="#sec9" class="nav-link">Mistakes</a>
-        </div>
-    </div>
+    <a href="#sec1" onclick="openSection('sec1')">Introduction</a>
+    <a href="#sec2" onclick="openSection('sec2')">Basic Rules</a>
+    <a href="#sec3" onclick="openSection('sec3')">First Steps</a>
+    <a href="#sec4" onclick="openSection('sec4')">Controls</a>
+    <a href="#sec5" onclick="openSection('sec5')">Progression</a>
+    <a href="#sec6" onclick="openSection('sec6')">Quests</a>
+    <a href="#sec7" onclick="openSection('sec7')">Rewards</a>
+    <a href="#sec8" onclick="openSection('sec8')">Tips & Tricks</a>
+    <a href="#sec9" onclick="openSection('sec9')">Common Mistakes</a>
+    <a href="#sec10" onclick="openSection('sec10')">Next Steps</a>
 
 </aside>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="guides.html">Guides</a>
-    </nav>
-</header>
-
-<!-- ================= CONTENT ================= -->
-<div class="guide-wrapper">
-
-<main class="content">
+<!-- ================= MAIN CONTENT ================= -->
+<main class="content static-content">
 
     <h1>Getting Started</h1>
 
-    <section id="sec1" class="card"><h2>Introduction</h2><p>Text...</p></section>
-    <section id="sec2" class="card"><h2>Basic Rules</h2><p>Text...</p></section>
-    <section id="sec3" class="card"><h2>First Steps</h2><p>Text...</p></section>
-    <section id="sec4" class="card"><h2>Controls</h2><p>Text...</p></section>
-    <section id="sec5" class="card"><h2>Progression</h2><p>Text...</p></section>
-    <section id="sec6" class="card"><h2>Quests</h2><p>Text...</p></section>
-    <section id="sec7" class="card"><h2>Rewards</h2><p>Text...</p></section>
-    <section id="sec8" class="card"><h2>Tips & Tricks</h2><p>Text...</p></section>
-    <section id="sec9" class="card"><h2>Common Mistakes</h2><p>Text...</p></section>
+    <p>Click a section in the left menu to open fullscreen view.</p>
+
+    <section id="sec1" class="card">
+        <h2>Introduction</h2>
+        <p>Welcome to the world of RA...</p>
+    </section>
+
+    <section id="sec2" class="card">
+        <h2>Basic Rules</h2>
+        <p>Here are the basic rules...</p>
+    </section>
+
+    <section id="sec3" class="card">
+        <h2>First Steps</h2>
+        <p>Your first steps in the game...</p>
+    </section>
+
+    <section id="sec4" class="card">
+        <h2>Controls</h2>
+        <p>How to control your character...</p>
+    </section>
+
+    <section id="sec5" class="card">
+        <h2>Progression</h2>
+        <p>How leveling works...</p>
+    </section>
+
+    <section id="sec6" class="card">
+        <h2>Quests</h2>
+        <p>Quest system explanation...</p>
+    </section>
+
+    <section id="sec7" class="card">
+        <h2>Rewards</h2>
+        <p>What you can earn...</p>
+    </section>
+
+    <section id="sec8" class="card">
+        <h2>Tips & Tricks</h2>
+        <p>Pro tips for beginners...</p>
+    </section>
+
+    <section id="sec9" class="card">
+        <h2>Common Mistakes</h2>
+        <p>What to avoid...</p>
+    </section>
+
+    <section id="sec10" class="card">
+        <h2>Next Steps</h2>
+        <p>Where to go next...</p>
+    </section>
 
 </main>
+
+<!-- ================= FULLSCREEN OVERLAY ================= -->
+<div class="overlay" id="overlay" onclick="closeSection()"></div>
+
+<div class="fullscreen" id="fullscreen">
+
+    <button class="close-btn" onclick="closeSection()">✕</button>
+
+    <div id="fullscreen-content"></div>
 
 </div>
 
 <!-- ================= JS ================= -->
 <script>
 
-// MENU OPEN/CLOSE
-function toggleMenu(){
-    document.getElementById("sidebar").classList.toggle("active");
+function openSection(id){
+
+    const section = document.getElementById(id);
+
+    document.getElementById("fullscreen-content").innerHTML = section.innerHTML;
+
+    document.getElementById("fullscreen").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+
 }
 
-// GROUP OPEN/CLOSE
-function toggleGroup(btn){
-    const group = btn.nextElementSibling;
-    group.classList.toggle("open");
+function closeSection(){
+
+    document.getElementById("fullscreen").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+
 }
-
-// SEARCH FILTER
-function filterMenu(){
-    const input = document.getElementById("search").value.toLowerCase();
-    const links = document.querySelectorAll(".nav-link");
-
-    links.forEach(link=>{
-        link.style.display = link.textContent.toLowerCase().includes(input)
-        ? "block"
-        : "none";
-    });
-}
-
-// SCROLL SPY (active section highlight)
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link");
-
-window.addEventListener("scroll", ()=>{
-    let current = "";
-
-    sections.forEach(sec=>{
-        const top = sec.offsetTop - 120;
-        const height = sec.clientHeight;
-
-        if(pageYOffset >= top){
-            current = sec.getAttribute("id");
-        }
-    });
-
-    navLinks.forEach(link=>{
-        link.classList.remove("active");
-        if(link.getAttribute("href") === "#" + current){
-            link.classList.add("active");
-        }
-    });
-});
 
 </script>
 
