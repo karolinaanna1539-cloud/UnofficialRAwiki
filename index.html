@@ -2,66 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Unofficial RA Wiki</title>
+<title>Unofficial RA Wiki</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="home">
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="guides.html">Getting Started</a>
-            <a href="side-quests.html">Side Quests</a>
-            <a href="maps.html">Maps</a>
-            <a href="classes.html">Classes</a>
-            <a href="changelog.html">Change Log</a>
-        </nav>
-    </header>
+<!-- ================= HAMBURGER ================= -->
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <!-- ================= HERO ================= -->
-    <section class="hero">
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar" id="sidebar">
 
-        <img src="images/ra-banner.png"
-             class="hero-title"
-             alt="RA Wiki Title">
+    <h3>RA Wiki</h3>
 
-        <p class="start-text">
-            Not sure how to start? Click here to begin the guide.
-        </p>
+    <input type="text" id="search" placeholder="Search..." onkeyup="filterMenu()">
 
-        <a class="button" href="guides.html">
-            Start here
-        </a>
+    <a class="nav-link" href="index.html">Home</a>
 
-        <!-- ================= TRAILER ================= -->
-        <div class="video-section">
-
-            <img src="images/logo.png"
-                 class="trailer-logo"
-                 alt="Trailer Logo">
-
-            <iframe
-                src="https://www.youtube.com/embed/jdfFl1cbpvM"
-                title="RA Trailer"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-
+    <div class="group">
+        <button onclick="toggleGroup(this)">▶ Guides</button>
+        <div class="group-items">
+            <a class="nav-link" href="guides.html">Getting Started</a>
         </div>
+    </div>
 
-    </section>
+    <div class="group">
+        <button onclick="toggleGroup(this)">▶ Quests</button>
+        <div class="group-items">
+            <a class="nav-link" href="#">Beginner Quests</a>
+            <a class="nav-link" href="#">Daily Quests</a>
+        </div>
+    </div>
+
+    <div class="group">
+        <button onclick="toggleGroup(this)">▶ Maps</button>
+        <div class="group-items">
+            <a class="nav-link" href="#">World Map</a>
+            <a class="nav-link" href="#">Dungeons</a>
+        </div>
+    </div>
+
+    <div class="group">
+        <button onclick="toggleGroup(this)">▶ Info</button>
+        <div class="group-items">
+            <a class="nav-link" href="#">Classes</a>
+            <a class="nav-link" href="#">Change Log</a>
+        </div>
+    </div>
+
+</aside>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="guides.html">Guides</a>
+        <a href="#">Maps</a>
+        <a href="#">Quests</a>
+    </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+
+    <img src="images/ra-banner.png" class="hero-title" alt="RA Wiki">
+
+    <p class="start-text">
+        Your unofficial guide to the world of RA.<br>
+        Beginner friendly • Quests • Maps • Classes
+    </p>
+
+    <a class="button" href="guides.html">
+        Start Here
+    </a>
+
+    <!-- ================= VIDEO ================= -->
+    <div class="video-section">
+
+        <img src="images/logo.png" class="trailer-logo" alt="Logo">
+
+        <iframe
+            src="https://www.youtube.com/embed/jdfFl1cbpvM"
+            title="RA Trailer"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+<!-- ================= JS ================= -->
+<script>
+
+// OPEN / CLOSE MENU
+function toggleMenu(){
+    document.getElementById("sidebar").classList.toggle("active");
+}
+
+// DROPDOWN GROUPS
+function toggleGroup(btn){
+    btn.nextElementSibling.classList.toggle("open");
+}
+
+// SEARCH FILTER
+function filterMenu(){
+    const input = document.getElementById("search").value.toLowerCase();
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link=>{
+        link.style.display = link.textContent.toLowerCase().includes(input)
+        ? "block"
+        : "none";
+    });
+}
+
+</script>
 
 </body>
-
-<footer>
-© 2026 Unofficial RA Wiki • Created by Karolina
-</footer>
-
 </html>
