@@ -31,7 +31,7 @@ body{
     position:relative;
 }
 
-/* Dark overlay */
+/* DARK OVERLAY */
 body::before{
     content:"";
     position:fixed;
@@ -251,11 +251,10 @@ section{
 }
 
 /* =========================
-   CARD SYSTEM
+   CARD
 ========================= */
 .card{
     background:rgba(0,0,0,.55);
-
     backdrop-filter:blur(8px);
 
     border:1px solid rgba(255,255,255,.08);
@@ -271,9 +270,7 @@ section{
 
 .card:hover{
     transform:translateY(-4px);
-
     background:rgba(0,0,0,.65);
-
     box-shadow:0 0 25px rgba(76,188,255,.15);
 }
 
@@ -282,7 +279,6 @@ section{
 ========================= */
 footer{
     margin-top:auto;
-
     text-align:center;
 
     padding:25px;
@@ -311,7 +307,7 @@ footer{
 }
 
 /* =========================================================
-   PRO WIKI SYSTEM (SIDEBAR + MENU)
+   PRO WIKI SIDEBAR (FANDOM STYLE)
 ========================================================= */
 
 /* HAMBURGER */
@@ -334,7 +330,7 @@ footer{
     backdrop-filter:blur(8px);
 }
 
-/* SIDEBAR (OFF CANVAS) */
+/* SIDEBAR */
 .sidebar{
     width:260px;
     height:100vh;
@@ -463,4 +459,62 @@ footer{
     .sidebar{
         width:100%;
     }
+}
+
+/* =========================
+   FULLSCREEN GUIDE SYSTEM
+========================= */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.6);
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.3s;
+
+    z-index:9998;
+}
+
+.overlay.active{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.fullscreen{
+    position:fixed;
+    inset:0;
+
+    background:rgba(10,10,10,.95);
+
+    transform:scale(0.95);
+    opacity:0;
+
+    transition:.3s;
+
+    z-index:9999;
+
+    padding:40px;
+    overflow:auto;
+}
+
+.fullscreen.active{
+    transform:scale(1);
+    opacity:1;
+}
+
+.close-btn{
+    position:absolute;
+    top:20px;
+    right:20px;
+
+    font-size:22px;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    cursor:pointer;
 }
