@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+:root{
+    --topbar-h: 50px;
+    --sidebar-w: 170px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #0f0f0f;
@@ -23,7 +28,7 @@ body {
     left: 0;
 
     width: 100%;
-    height: 50px;
+    height: var(--topbar-h);
 
     display: flex;
     align-items: center;
@@ -56,16 +61,15 @@ body {
 }
 
 /* =========================
-   SIDEBAR (MNIEJSZY)
+   SIDEBAR
 ========================= */
 .sidebar {
     position: fixed;
-    top: 50px;
-
+    top: var(--topbar-h);
     left: 0;
-    width: 170px;
 
-    height: calc(100vh - 50px);
+    width: var(--sidebar-w);
+    height: calc(100vh - var(--topbar-h));
 
     background: rgba(20,20,20,0.95);
     padding: 10px;
@@ -97,8 +101,8 @@ body {
    CONTENT
 ========================= */
 .content {
-    margin-top: 50px;
-    margin-left: 170px;
+    margin-top: var(--topbar-h);
+    margin-left: calc(var(--sidebar-w) + 20px);
 
     padding: 20px;
 }
@@ -168,4 +172,11 @@ body {
 
     font-size: 20px;
     cursor: pointer;
+}
+
+/* =========================
+   OPTIONAL CLEANUP
+========================= */
+h1, h2, h3, p {
+    margin: 0;
 }
