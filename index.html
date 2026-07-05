@@ -57,49 +57,60 @@
 
 </aside>
 
-<!-- ================= HEADER ================= -->
-<header>
-    <nav>
+<!-- ================= TOP HEADER ================= -->
+<header class="topbar">
+
+    <div class="logo">RA Wiki</div>
+
+    <nav class="topmenu">
         <a href="index.html">Home</a>
         <a href="guides.html">Guides</a>
         <a href="#">Maps</a>
         <a href="#">Quests</a>
     </nav>
+
+    <div class="created">Created by RA Wiki Team</div>
+
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero">
+<!-- ================= CONTENT ================= -->
+<main class="content">
 
-    <img src="images/ra-banner.png" class="hero-title" alt="RA Wiki">
+    <!-- HERO -->
+    <section class="hero">
 
-    <p class="start-text">
-        Your unofficial guide to the world of RA.<br>
-        Beginner friendly • Quests • Maps • Classes
-    </p>
+        <img src="images/ra-banner.png" class="hero-title" alt="RA Wiki">
 
-    <a class="button" href="guides.html">
-        Start Here
-    </a>
+        <p class="start-text">
+            Your unofficial guide to the world of RA.<br>
+            Beginner friendly • Quests • Maps • Classes
+        </p>
 
-    <!-- ================= VIDEO ================= -->
-    <div class="video-section">
+        <a class="button" href="guides.html">
+            Start Here
+        </a>
 
-        <img src="images/logo.png" class="trailer-logo" alt="Logo">
+        <!-- VIDEO -->
+        <div class="video-section">
 
-        <iframe
-            src="https://www.youtube.com/embed/jdfFl1cbpvM"
-            title="RA Trailer"
-            allowfullscreen>
-        </iframe>
+            <img src="images/logo.png" class="trailer-logo" alt="Logo">
 
-    </div>
+            <iframe
+                src="https://www.youtube.com/embed/jdfFl1cbpvM"
+                title="RA Trailer"
+                allowfullscreen>
+            </iframe>
 
-</section>
+        </div>
+
+    </section>
+
+</main>
 
 <!-- ================= JS ================= -->
 <script>
 
-// OPEN / CLOSE MENU
+// TOGGLE SIDEBAR (MOBILE)
 function toggleMenu(){
     document.getElementById("sidebar").classList.toggle("active");
 }
@@ -109,10 +120,10 @@ function toggleGroup(btn){
     btn.nextElementSibling.classList.toggle("open");
 }
 
-// SEARCH FILTER
+// SEARCH FILTER (ONLY SIDEBAR LINKS)
 function filterMenu(){
     const input = document.getElementById("search").value.toLowerCase();
-    const links = document.querySelectorAll(".nav-link");
+    const links = document.querySelectorAll(".sidebar .nav-link");
 
     links.forEach(link=>{
         link.style.display = link.textContent.toLowerCase().includes(input)
